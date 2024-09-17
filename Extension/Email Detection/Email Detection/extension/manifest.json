@@ -1,0 +1,38 @@
+{
+    "manifest_version": 3,
+    "name": "Email Spam Detector",
+    "version": "1.0",
+    "description": "A browser extension that detects email spam.",
+    "icons": {
+        "16": "icon.jpg",
+        "32": "icon.jpg",
+        "48": "icon.jpg",
+        "128": "icon.jpg"
+    },
+    "permissions": [
+      "activeTab",
+      "storage",
+      "identity",
+      "identity.email"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://mail.google.com/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icon.jpg",
+        "32": "icon.jpg",
+        "48": "icon.jpg",
+        "128": "icon.jpg"
+      }
+    }
+  }
+
+  

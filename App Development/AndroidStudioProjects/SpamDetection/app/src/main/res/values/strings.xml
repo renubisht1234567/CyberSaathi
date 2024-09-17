@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Spam Detection</string>
+    <string name="mail">mail</string>
+</resources>

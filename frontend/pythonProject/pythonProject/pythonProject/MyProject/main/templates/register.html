@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+
+    <!--Theme css-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+      <!--Bootstrap css-->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+  <style>
+
+ form {
+    margin: auto;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow: auto;
+    background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.wave {
+    background: rgb(255 255 255 / 25%);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 12em;
+    animation: wave 10s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 18s linear reverse infinite;
+    opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 20s -1s reverse infinite;
+    opacity: 0.9;
+}
+
+@keyframes wave {
+    2% {
+        transform: translateX(1);
+    }
+
+    25% {
+        transform: translateX(-25%);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    75% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(1);
+    }
+}
+
+ body {
+background-image: url('{% static 'images/about/login.png' %}');
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;  /* Horizontally center */
+      align-items: center;      /* Vertically center */
+    }
+
+    /* Form Container */
+    form {
+    width: 600px;           /* Increased width */
+    min-height: 500px;           /* Set a minimum height for the form */
+    border-radius: 8px;
+    padding: 40px;               /* Increased padding to expand height */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;      /* Ensure padding is included in the width/height calculations */
+}
+    /* Form Labels */
+    form label {
+    font-weight: 600;
+    color: Black;
+    font-size: 25px;            /* Increased font size for labels */
+    margin-bottom: 12px;
+    display: block;
+    }
+
+    /* Input Fields */
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="password"],
+    form input[type="number"] {
+    width: 250px;
+    padding: 30px;              /* Increased padding for input boxes */
+    margin-bottom: 30px;        /* Increased space between input fields */
+    border: 2px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 17px;            /* Increased font size for input text */
+    color: #333;
+    }
+
+    /* Input Focus Styles */
+    form input[type="text"]:focus,
+    form input[type="email"]:focus,
+    form input[type="password"]:focus,
+    form input[type="number"]:focus {
+      border-color: #007bff;
+      outline: none;
+      box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+    }
+
+    /* Submit Button */
+    form button[type="submit"] {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    padding: 16px;              /* Increased button padding */
+    border: 2px solid black;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;            /* Increased font size for the button */
+    font-weight: bold;
+    }
+
+    /* Submit Button Hover */
+    form button[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    /* "Already have an Account" Text */
+    form p.bottom {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 20px;
+      color: #c40eaee0;
+    }
+
+    /* "Login Here" Link */
+    form p.bottom a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    form p.bottom a:hover {
+      text-decoration: underline;
+    }
+
+
+  </style>
+
+
+
+    <title>My Django App</title>
+
+</head>
+<body>
+<header class="nav-area navbar-fixed-top">
+      <div class="container">
+        <div class="row">
+          <!--main menu starts-->
+
+          <div class="col-md-12">
+            <div class="main-menu">
+              <div class="navbar navbar-cus">
+                <div class="navbar-header">
+                  <span class="logo"><span>Smart Defence</span></span>
+                  <!--change logo name-->
+                  <button
+                    type="button"
+                    class="navbar-toggle"
+                    data-toggle="collapse"
+                    data-target=".navbar-collapse"
+                  >
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                </div>
+
+                <div class="navbar-collapse collapse">
+                  <nav>
+                    <a href="{% url 'register' %}"></a>
+                    <a href="{% url 'login' %}"></a>
+                    <ul class="nav navbar-nav navbar-right">
+                      <li class="active">
+                        <a class="smooth-menu" href="{% url 'index' %}#home">Home</a>
+                      </li>
+                      <li>
+                        <a class="smooth-menu" href="{% url 'index' %}#about">Introduction</a>
+                      </li>
+                      <li>
+                        <a class="smooth-menu" href="{% url 'index' %}#resume">Features</a>
+                      </li>
+                      <li>
+                        <a class="smooth-menu" href="{% url 'index' %}#services">Installation</a>
+                      </li>
+
+                      <!--<li><a class="smooth-menu" href="#PROJECT">Projects</a></li>-->
+                      <li>
+                        <a class="smooth-menu" href="{% url 'index' %}#contact">Contact</a>
+                      </li>
+
+                        <li><a href="{% url 'login' %}">Login</a></li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--main menu ends-->
+        </div>
+      </div>
+    </header>
+    <div>
+        <div>
+      <div>
+     <div class="wave"></div>
+     <div class="wave"></div>
+     <div class="wave"></div>
+  </div>
+            <form action="{% url 'register' %}" method="post" class="row g-3">
+      {% csrf_token %}
+            <br>
+            <div class="col-12">
+                <label for="inputName" class="form-label">Name</label>
+                <input type="text" class="form-control" name="name"  placeholder="Enter Your Name">
+            </div>
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Email</label>
+                <input type="email" class="form-control" name="email" placeholder="Enter Your Email">
+            </div>
+            <div class="col-md-6">
+                <label for="inputPassword4" class="form-label">Password</label>
+                <input type="password" class="form-control" name="password" placeholder="Enter Your Password">
+            </div>
+            <div class="col-12">
+                <label for="inputContact" class="form-label">Contact</label>
+                <input type="number" class="form-control" name="contact" placeholder="Enter Your Contact">
+            </div>
+            <div class="col-12">
+                <button type="submit" value="submit" class="btn btn-primary">Register</button>
+                <p class="bottom"> Already have an Account?  <a class="bottom" href="{% url 'register' %}">Login here </a> </p>
+            </div>
+        </form>
+    </div>
+
+
+</body>
+
+</html>

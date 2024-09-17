@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% load static %}
+
+    <title>Our Offers</title>
+</head>
+<style>
+    body{
+    background-color:#c172e9;
+    }
+
+/* Navigation Bar Styling */
+.nav-area {
+  background-color: #e39ff6; /* Dark background color for the navbar */
+  position: fixed; /* Make navbar fixed */
+  width: 100%; /* Full width */
+  top: 0; /* Stick to the top */
+  z-index: 1000; /* Ensure it’s on top */
+}
+
+.navbar-cus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.navbar-header .logo {
+  color: #c40eaee0;
+    background-color: #ffffff;
+    border-style: solid;
+    border-color: #c40eaee0;
+    border-radius: 1em;
+    padding: 20px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 32px;
+    letter-spacing: 3px;
+}
+
+.navbar-collapse {
+  display: flex;
+  flex-grow: 1; /* Take up available space */
+  justify-content: flex-end; /* Align items to the right */
+}
+
+.navbar-nav {
+  display: flex;
+  list-style: none; /* Remove default list styling */
+}
+
+.navbar-nav > li {
+  margin: 0;
+}
+
+.navbar-nav > li > a {
+  color: white; /* White text color for nav links */
+  padding: 15px 20px;
+  display: block;
+  text-decoration: none; /* Remove underline from links */
+  font-size: 20px;
+  margin:10px;
+}
+
+.navbar-nav .active > a {
+  color: #c40eaee0; /* Active link background color */
+}
+
+/* Main Container Styling */
+.main-container {
+  padding: 20px;
+  background-color: #f4f4f4;
+  height: 700px;
+  background-image: url('{% static 'images/about/link.png' %}');
+  background-size: cover; /* Ensure the background image covers the container */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent the background image from repeating */
+}
+
+.main-heading {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* Flexbox Layout for Boxes */
+.container {
+  display: flex;
+  flex-wrap: wrap; /* Allow boxes to wrap to the next line if needed */
+  justify-content: center; /* Center the boxes horizontally */
+  gap: 50px; /* Increased space between boxes */
+  max-width: 1600px; /* Set a maximum width for the container */
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+.box {
+  background-color: #c172e9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 30px; /* Increase padding for more content space */
+  width: 400px; /* Adjusted width of the boxes */
+  height: 400px; /* Set a specific height for the boxes */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-size: 10px;
+}
+
+.box .icon-bg {
+  margin-bottom: 15px; /* Increase margin for more spacing */
+}
+
+.box .icon {
+  width: 60px; /* Adjust size as needed */
+  height: 60px;
+}
+
+.box h3 {
+  font-size: 24px; /* Increase font size */
+  margin: 15px 0; /* Adjust margin as needed */
+}
+
+.box p {
+  font-size: 22px; /* Increase font size */
+  color: black;
+}
+
+    /* Download Button Styling */
+.download-btn {
+  background-color: white; /* Green background color */
+  color: #c40eaee0; /* White text color */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 12px 20px; /* Padding around the text */
+  font-size: 20px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  text-transform: uppercase; /* Uppercase text */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transition for background color and scaling */
+  display: inline-block; /* Inline-block to fit content */
+}
+
+.download-btn:hover {
+  background-color: #white; /* Darker green background on hover */
+}
+
+.download-btn:active {
+  background-color: #388e3c; /* Even darker green when clicked */
+  transform: scale(0.98); /* Slightly scale down the button when clicked */
+}
+
+    footer {
+  background-color: #c172e9; /* Dark background color */
+  color: #fff; /* White text color */
+  text-align: center; /* Center text alignment */
+    }
+</style>
+<body>
+<header class="nav-area navbar-fixed-top">
+      <div class="container">
+        <div class="row">
+          <!--main menu starts-->
+
+          <div class="col-md-12">
+            <div class="main-menu">
+              <div class="navbar navbar-cus">
+                <div class="navbar-header">
+                  <span class="logo"><span>Smart Defence</span></span>
+                  <!--change logo name-->
+
+                </div>
+
+                <div class="navbar-collapse collapse">
+                  <nav>
+                    <a href="{% url 'register' %}"></a>
+                    <a href="{% url 'login' %}"></a>
+                    <ul class="nav navbar-nav navbar-right">
+                      <li class="active">
+                        <a class="smooth-menu" href="{% url 'index' %}#home">Home</a>
+                      </li>
+                      <li>
+                        <a class="smooth-menu" href="{% url 'index' %}#about">Introduction</a>
+                      </li>
+                      <li>
+                        <a class="smooth-menu" href="{% url 'index' %}#resume">Features</a>
+                      </li>
+                      <li>
+                        <a class="smooth-menu" href="{% url 'index' %}#services">Installation</a>
+                      </li>
+
+                      <!--<li><a class="smooth-menu" href="#PROJECT">Projects</a></li>-->
+                      <li>
+                        <a class="smooth-menu" href="{% url 'index' %}#contact">Contact</a>
+                      </li>
+
+                        <li><a href="{% url 'login' %}">Login</a></li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--main menu ends-->
+        </div>
+      </div>
+    </header>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+    <div class="main-container">
+        <div>
+            <h2 class="main-heading">What we Offer</h2>
+            <div class="container">
+
+                <div class="box">
+                    <div class="icon-bg">
+                        <img src="{% static 'images/about/icon.png' %}" alt="Icon 2" class="icon">
+                    </div>
+                    <h3>Email Spam</h3>
+                    <p>Email spam protection uses filters and algorithms to detect and block unwanted or malicious
+                        emails from reaching your inbox and safe your data.</p>
+                   <a href="https://spam-detection-interface.onrender.com/" class="download-btn"> Take Trial</a> <!-- Updated -->
+                </div>
+                <div class="box">
+                    <div class="icon-bg">
+                        <img src="{% static 'images/about/icon4.png' %}" alt="Icon 3" class="icon">
+                    </div>
+                    <h3>URL Spam</h3>
+                    <p>URL Spam Protection: Protect your online experience by blocking harmful or malicious URLs.
+                        Our URL spam protection filters out dangerous links to safeguard your data and prevent phishing attacks.</p>
+                     <a href="https://phishing-url-detection-t80b.onrender.com/" class="download-btn">Take Trial</a> <!-- Updated -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>This is the footer content.</p>
+    </footer>
+</body>
+
+</html>

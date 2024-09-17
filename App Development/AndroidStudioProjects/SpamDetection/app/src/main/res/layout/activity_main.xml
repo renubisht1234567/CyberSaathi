@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    tools:ignore="ExtraText"><![CDATA[
+    android:orientation="vertical">
+    ]]>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Spam Detector"
+        android:textAlignment="center"
+        android:textSize="50dp"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <EditText
+        android:id="@+id/mail"
+        android:layout_width="match_parent"
+        android:layout_height="98dp"
+        android:layout_marginTop="50dp"
+        android:autofillHints=""
+        android:hint="mail"
+        android:textColorHint="#5C6BC0"
+        android:textSize="40dp"
+        tools:ignore="HardcodedText,SpUsage,TextContrastCheck,TextFields,TouchTargetSizeCheck,VisualLintTextFieldSize" />
+
+    <Button
+        android:id="@+id/predict"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Predict"
+        android:textSize="50dp"
+        tools:ignore="HardcodedText,SpUsage,VisualLintButtonSize"> </Button>
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="384dp"
+        android:layout_marginTop="100dp"
+        android:text="result"
+        android:textAlignment="center"
+        android:textSize="40dp"
+        tools:ignore="HardcodedText,SpUsage,VisualLintBounds"> </TextView>
+</LinearLayout>
